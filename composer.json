@@ -1,0 +1,18 @@
+{
+	"name": "markguinn/silverstripe-gridfieldmultiselect",
+	"description": "Gridfield extensions to add checkboxes for each row to easily delete or perform actions on multiple rows.",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "gridfield", "multiselect", "checkboxes", "modeladmin"],
+	"license": "MIT",
+	"authors": [{
+		"name": "Mark Guinn",
+		"email": "mark@adaircreative.com",
+		"homepage": "http://github.com/markguinn"
+	}],
+	"extra": {
+		"installer-name": "gridfieldmultiselect"
+	},
+	"require": {
+		"silverstripe/framework": ">=3.1"
+	}
+}
