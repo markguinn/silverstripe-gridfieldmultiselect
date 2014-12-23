@@ -75,7 +75,7 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
 		}
 
 		return array(
-			$this->targetFragment => '<p class="grid-multiselect-button">' . $button->Field() . '</p>',
+			$this->targetFragment => $button->Field(),
 		);
 	}
 

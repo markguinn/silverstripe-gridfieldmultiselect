@@ -28,15 +28,13 @@
 					return false;
 				}
 
-				if (this.data('confirm')) {
-					if (confirm(this.data('confirm'))) {
-						return true;
-					} else {
-						e.preventDefault();
-						e.stopPropagation();
-						return false;
-					}
+				if (this.data('confirm') && !confirm(this.data('confirm'))) {
+					e.preventDefault();
+					e.stopPropagation();
+					return false;
 				}
+
+				this._super(e);
 			}
 		});
 
