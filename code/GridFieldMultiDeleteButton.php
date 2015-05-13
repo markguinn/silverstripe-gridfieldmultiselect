@@ -12,8 +12,8 @@ class GridFieldMultiDeleteButton extends GridFieldApplyToMultipleRows
 	/**
 	 * Shortcut to create a button that deletes all selected entries
 	 */
-	public function  __construct() {
-		parent::__construct('deleteselected', 'Delete Selected', array($this, 'deleteRecord'), 'after', array(
+	public function  __construct($targetFragment = 'after') {
+		parent::__construct('deleteselected', 'Delete Selected', array($this, 'deleteRecord'), $targetFragment, array(
 			'icon'    => 'delete',
 			'class'   => 'deleteSelected',
 			'confirm' => _t('GridFieldMultiDeleteButton.Confirm', 'Are you sure you want to delete all selected items?'),
