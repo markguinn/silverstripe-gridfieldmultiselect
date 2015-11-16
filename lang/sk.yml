@@ -1,0 +1,4 @@
+sk:
+  GridFieldMultiDeleteButton:
+    ButtonText: 'Vymazať označené'
+    Confirm: 'Ste si istý, že chcete vymazať všetky označené položky?'
