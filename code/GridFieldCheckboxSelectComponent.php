@@ -13,6 +13,13 @@ class GridFieldCheckboxSelectComponent implements GridField_ColumnProvider
 {
     const CHECKBOX_COLUMN = 'SelectCheckbox';
 
+    /**
+     * Config flag to determine whether checkbox column should be prepended
+     * or appended to the table.
+     *
+     * @var bool
+     */
+    private static $prepend_column = false;
 
     /**
      * Adds some javascript
@@ -34,8 +41,11 @@ class GridFieldCheckboxSelectComponent implements GridField_ColumnProvider
      */
     public function augmentColumns($gridField, &$columns)
     {
-        //		array_unshift($columns, self::CHECKBOX_COLUMN);
-        $columns[] = self::CHECKBOX_COLUMN;
+        if (Config::inst()->get(__CLASS__, 'prepend_column')) {
+		    array_unshift($columns, self::CHECKBOX_COLUMN);
+        } else {
+		    $columns[] = self::CHECKBOX_COLUMN;
+        }
     }
 
 
