@@ -2,3 +2,4 @@ sk:
   GridFieldMultiDeleteButton:
     ButtonText: 'Vymazať označené'
     Confirm: 'Ste si istý, že chcete vymazať všetky označené položky?'
+    SelectAllVisibleRows: 'Označiť všetky viditeľné riadky'
