@@ -17,7 +17,7 @@
 
 		$('.ss-gridfield .multiselect-all').entwine({
 			onclick: function () {
-				this.closest('table').find('.multiselect').prop('checked', this.prop('checked'));
+				this.closest('table').find('.multiselect').prop('checked', this.prop('checked')).trigger('change');
 			}
 		});
 
