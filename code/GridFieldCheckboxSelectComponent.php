@@ -1,4 +1,13 @@
 <?php
+
+namespace GridFieldMultiSelect;
+
+use \SilverStripe\Forms\GridField\GridField_ColumnProvider;
+use \SilverStripe\Forms\GridField\GridField;
+use \SilverStripe\ORM\DataObject;
+use \SilverStripe\View\Requirements;
+use \SilverStripe\Core\Config\Config;
+
 /**
  * Gives each row a checkbox which can be paired with various
  * children of GridFieldApplyToMultipleRows subclasses to
@@ -26,7 +35,7 @@ class GridFieldCheckboxSelectComponent implements GridField_ColumnProvider
      */
     public function __construct()
     {
-        Requirements::javascript('gridfieldmultiselect/javascript/GridFieldCheckboxSelectComponent.js');
+        Requirements::javascript('markguinn/silverstripe-gridfieldmultiselect:javascript/GridFieldCheckboxSelectComponent.js');
     }
 
 
@@ -92,11 +101,9 @@ class GridFieldCheckboxSelectComponent implements GridField_ColumnProvider
     public function getColumnMetadata($gridField, $column)
     {
         if ($column === self::CHECKBOX_COLUMN) {
-            $title = _t('GridFieldMultiSelect.SelectAllVisibleRows', 'Select all visible rows');
-            return array(
-                'title' => '<input class="multiselect-all no-change-track" type="checkbox"
-								title="' . htmlentities($title) . '">',
-            );
+            return [
+                'title' => 'Importer produkt'
+            ];
         }
     }
 

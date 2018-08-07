@@ -1,7 +1,19 @@
 <?php
+
+namespace GridFieldMultiSelect;
+
+use SilverStripe\Control\HTTPRequest;
+use SilverStripe\Control\HTTPResponse;
+use \SilverStripe\Forms\GridField\GridField_HTMLProvider;
+use \SilverStripe\Forms\GridField\GridField_ActionProvider;
+use \SilverStripe\Forms\GridField\GridField_URLHandler;
+use \SilverStripe\Forms\GridField\GridField_FormAction;
+use \SilverStripe\Forms\GridField\GridField;
+use \SilverStripe\ORM\DataObject;
+use \SilverStripe\ORM\ArrayList;
+use SilverStripe\ORM\SS_List;
+
 /**
- * 
- *
  * @author Mark Guinn <mark@adaircreative.com>
  * @date 12.22.2014
  * @package gridfieldmultiselect
@@ -25,11 +37,11 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
 
 
     /**
-     * @param string $actionName
-     * @param string $buttonText
+     * @param string   $actionName
+     * @param string   $buttonText
      * @param callable $rowHandler
-     * @param string $targetFragment
-     * @param array $buttonConfig - icon, class, possibly others
+     * @param string   $targetFragment
+     * @param array    $buttonConfig - icon, class, possibly others
      */
     public function __construct($actionName, $buttonText, $rowHandler, $targetFragment = 'after', $buttonConfig = array())
     {
@@ -92,7 +104,7 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
      * they don't conflict with other components.
      *
      * @param GridField
-     * @return Array with action identifier strings.
+     * @return array with action identifier strings.
      */
     public function getActions($gridField)
     {
@@ -108,8 +120,8 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
      *
      * @param GridField
      * @param String Action identifier, see {@link getActions()}.
-     * @param Array  Arguments relevant for this
-     * @param Array  All form data
+     * @param array  Arguments relevant for this
+     * @param array  All form data
      * @return array
      */
     public function handleAction(GridField $gridField, $actionName, $arguments, $data)
@@ -136,13 +148,13 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
 
 
     /**
-     * @param GridField $gridField
-     * @param array|SS_HTTPRequest $data
+     * @param GridField         $gridField
+     * @param array|HTTPRequest $data
      * @return array
      */
     public function handleIt($gridField, $data = array())
     {
-        if ($data instanceof SS_HTTPRequest) {
+        if ($data instanceof HTTPRequest) {
             $data = $data->requestVars();
         }
 
@@ -170,6 +182,7 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
         }
 
         $this->onAfterList($gridField, $response, $records, $data, $ids);
+
         return $response;
     }
 
@@ -177,8 +190,8 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
     /**
      * Hook for subclasses
      * @param GridField $gridField
-     * @param array $data
-     * @param array $idList
+     * @param array     $data
+     * @param array     $idList
      */
     protected function onBeforeList($gridField, $data, $idList)
     {
@@ -189,11 +202,11 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
      * This allows subclasses to have a hook at the end of running through
      * all the items. Response will usually be an array on the way in
      * but it can be changed to whatever and will be returned as is.
-     * @param GridField $gridField
-     * @param array|SS_HTTPResponse $response
-     * @param SS_List $records
-     * @param array $data
-     * @param array $idList
+     * @param GridField          $gridField
+     * @param array|HTTPResponse $response
+     * @param SS_List            $records
+     * @param array              $data
+     * @param array              $idList
      */
     protected function onAfterList($gridField, &$response, $records, $data, $idList)
     {
@@ -201,10 +214,10 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
 
 
     /**
-     * @param GridField $gridField
-     * @param array|SS_HTTPResponse $response
-     * @param array $data
-     * @param array $idList
+     * @param GridField          $gridField
+     * @param array|HTTPResponse $response
+     * @param array              $data
+     * @param array              $idList
      */
     protected function onEmptyList($gridField, &$response, $data, $idList)
     {

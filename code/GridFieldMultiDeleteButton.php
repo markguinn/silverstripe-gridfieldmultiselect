@@ -1,4 +1,9 @@
 <?php
+
+namespace GridFieldMultiSelect;
+
+use SilverStripe\Versioned\Versioned;
+
 /**
  * Button to delete every checked row. The only confirmation
  * would be via javascript.
@@ -21,16 +26,15 @@ class GridFieldMultiDeleteButton extends GridFieldApplyToMultipleRows
         ));
     }
 
-
     /**
-     * @param DataObject $record
-     * @param int $index
+     * @param \SilverStripe\ORM\DataObject $record
+     * @param int                          $index
      */
     public function deleteRecord($record, $index)
     {
-        if ($record->hasExtension('Versioned')) {
-            $record->deleteFromStage('Stage');
-            $record->deleteFromStage('Live');
+        if ($record->hasExtension(Versioned::class)) {
+//            $record->deleteFromStage('Stage');
+//            $record->deleteFromStage('Live');
         } else {
             $record->delete();
         }

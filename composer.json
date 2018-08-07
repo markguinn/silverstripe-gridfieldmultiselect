@@ -10,7 +10,10 @@
 		"homepage": "http://github.com/markguinn"
 	}],
 	"extra": {
-		"installer-name": "gridfieldmultiselect"
+		"installer-name": "gridfieldmultiselect",
+		"expose": [
+			"javascript"
+		]
 	},
 	"require": {
 		"silverstripe/framework": ">=3.1"

@@ -6,8 +6,9 @@
  * @package gridfieldmultiselect
  * @subpackage javascript
  */
-(function($){
-	$.entwine('ss', function($) {
+
+(function ($) {
+	$.entwine('ss', function ($) {
 
 		$('.ss-gridfield .multiselect').entwine({
 			onclick: function (e) {
@@ -22,7 +23,7 @@
 		});
 
 		$('.ss-gridfield .multiselect-button').entwine({
-			onclick: function(e) {
+			onclick: function (e) {
 				if (this.closest('.ss-gridfield').find('.multiselect:checked').length == 0) {
 					alert('Please check one or more rows.');
 					return false;
