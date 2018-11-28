@@ -1,4 +1,11 @@
 <?php
+
+namespace MarkGuinn\GridfieldMultiselect\Forms\GridField;
+
+use GridField_ColumnProvider;
+use Requirements;
+use Config;
+
 /**
  * Gives each row a checkbox which can be paired with various
  * children of GridFieldApplyToMultipleRows subclasses to

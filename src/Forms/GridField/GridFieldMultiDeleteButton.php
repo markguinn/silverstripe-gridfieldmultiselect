@@ -1,4 +1,9 @@
 <?php
+
+namespace MarkGuinn\GridfieldMultiselect\Forms\GridField;
+
+
+
 /**
  * Button to delete every checked row. The only confirmation
  * would be via javascript.

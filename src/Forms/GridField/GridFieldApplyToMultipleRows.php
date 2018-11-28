@@ -1,4 +1,16 @@
 <?php
+
+namespace MarkGuinn\GridfieldMultiselect\Forms\GridField;
+
+use GridField_HTMLProvider;
+use GridField_ActionProvider;
+use GridField_URLHandler;
+use GridField_FormAction;
+use GridField;
+use SS_HTTPRequest;
+use ArrayList;
+use DataObject;
+
 /**
  * 
  *
