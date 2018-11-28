@@ -9,6 +9,11 @@
 		"email": "mark@adaircreative.com",
 		"homepage": "http://github.com/markguinn"
 	}],
+	"extra": {
+        "expose": [
+            "client/js"
+        ]
+	},
 	"require": {
 		"silverstripe/framework": "^4.0"
     },

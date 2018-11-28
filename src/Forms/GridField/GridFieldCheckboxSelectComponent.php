@@ -32,7 +32,7 @@ class GridFieldCheckboxSelectComponent implements GridField_ColumnProvider
      */
     public function __construct()
     {
-        Requirements::javascript('gridfieldmultiselect/javascript/GridFieldCheckboxSelectComponent.js');
+        Requirements::javascript('markguinn/silverstripe-gridfieldmultiselect: client/js/GridFieldCheckboxSelectComponent.js');
     }
 
 
