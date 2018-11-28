@@ -1,18 +1,17 @@
 <?php
-
 namespace MarkGuinn\GridfieldMultiselect\Forms\GridField;
 
-use GridField_HTMLProvider;
-use GridField_ActionProvider;
-use GridField_URLHandler;
-use GridField_FormAction;
-use GridField;
-use SS_HTTPRequest;
-use ArrayList;
-use DataObject;
+use SilverStripe\Forms\GridField\GridField_HTMLProvider;
+use SilverStripe\Forms\GridField\GridField_ActionProvider;
+use SilverStripe\Forms\GridField\GridField_URLHandler;
+use SilverStripe\Forms\GridField\GridField_FormAction;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Control\HTTPRequest;
+use SilverStripe\ORM\ArrayList;
+use SilverStripe\ORM\DataObject;
 
 /**
- * 
+ *
  *
  * @author Mark Guinn <mark@adaircreative.com>
  * @date 12.22.2014
@@ -149,12 +148,12 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
 
     /**
      * @param GridField $gridField
-     * @param array|SS_HTTPRequest $data
+     * @param array|HTTPRequest $data
      * @return array
      */
     public function handleIt($gridField, $data = array())
     {
-        if ($data instanceof SS_HTTPRequest) {
+        if ($data instanceof HTTPRequest) {
             $data = $data->requestVars();
         }
 
@@ -202,7 +201,7 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
      * all the items. Response will usually be an array on the way in
      * but it can be changed to whatever and will be returned as is.
      * @param GridField $gridField
-     * @param array|SS_HTTPResponse $response
+     * @param array|HTTPResponse $response
      * @param SS_List $records
      * @param array $data
      * @param array $idList
@@ -214,7 +213,7 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
 
     /**
      * @param GridField $gridField
-     * @param array|SS_HTTPResponse $response
+     * @param array|HTTPResponse $response
      * @param array $data
      * @param array $idList
      */

@@ -1,10 +1,9 @@
 <?php
-
 namespace MarkGuinn\GridfieldMultiselect\Forms\GridField;
 
-use GridField_ColumnProvider;
-use Requirements;
-use Config;
+use SilverStripe\Forms\GridField\GridField_ColumnProvider;
+use SilverStripe\View\Requirements;
+use SilverStripe\Core\Config\Config;
 
 /**
  * Gives each row a checkbox which can be paired with various
