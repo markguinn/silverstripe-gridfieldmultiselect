@@ -117,6 +117,6 @@ class GridFieldCheckboxSelectComponent implements GridField_ColumnProvider
      */
     public function getColumnAttributes($gridField, $record, $columnName)
     {
-        return array('class' => 'col-checkbox');
+        return array('class' => 'col-checkbox grid-field__col-compact');
     }
 }
