@@ -73,7 +73,7 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
     public function getHTMLFragments($gridField)
     {
         $button = new GridField_FormAction($gridField, $this->actionName, $this->buttonText, $this->actionName, null);
-        $button->addExtraClass('multiselect-button');
+        $button->addExtraClass('multiselect-button btn');
 
         if (!empty($this->buttonConfig['icon'])) {
             $button->setAttribute('data-icon', $this->buttonConfig['icon']);
