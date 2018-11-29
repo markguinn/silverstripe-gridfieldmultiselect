@@ -1,4 +1,6 @@
 <?php
+namespace MarkGuinn\GridfieldMultiselect\Forms\GridField;
+
 /**
  * Button to delete every checked row. The only confirmation
  * would be via javascript.
@@ -16,11 +18,10 @@ class GridFieldMultiDeleteButton extends GridFieldApplyToMultipleRows
     {
         parent::__construct('deleteselected', _t('GridFieldMultiDeleteButton.ButtonText', 'Delete Selected'), array($this, 'deleteRecord'), $targetFragment, array(
             'icon'    => 'delete',
-            'class'   => 'deleteSelected',
+            'class'   => 'deleteSelected btn-danger',
             'confirm' => _t('GridFieldMultiDeleteButton.Confirm', 'Are you sure you want to delete all selected items?'),
         ));
     }
-
 
     /**
      * @param DataObject $record

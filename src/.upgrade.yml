@@ -1,0 +1,4 @@
+mappings:
+  GridFieldApplyToMultipleRows: MarkGuinn\GridfieldMultiselect\Forms\GridField\GridFieldApplyToMultipleRows
+  GridFieldCheckboxSelectComponent: MarkGuinn\GridfieldMultiselect\Forms\GridField\GridFieldCheckboxSelectComponent
+  GridFieldMultiDeleteButton: MarkGuinn\GridfieldMultiselect\Forms\GridField\GridFieldMultiDeleteButton

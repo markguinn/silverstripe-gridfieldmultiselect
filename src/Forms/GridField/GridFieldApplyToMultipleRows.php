@@ -1,6 +1,17 @@
 <?php
+namespace MarkGuinn\GridfieldMultiselect\Forms\GridField;
+
+use SilverStripe\Forms\GridField\GridField_HTMLProvider;
+use SilverStripe\Forms\GridField\GridField_ActionProvider;
+use SilverStripe\Forms\GridField\GridField_URLHandler;
+use SilverStripe\Forms\GridField\GridField_FormAction;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Control\HTTPRequest;
+use SilverStripe\ORM\ArrayList;
+use SilverStripe\ORM\DataObject;
+
 /**
- * 
+ *
  *
  * @author Mark Guinn <mark@adaircreative.com>
  * @date 12.22.2014
@@ -62,7 +73,7 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
     public function getHTMLFragments($gridField)
     {
         $button = new GridField_FormAction($gridField, $this->actionName, $this->buttonText, $this->actionName, null);
-        $button->addExtraClass('multiselect-button');
+        $button->addExtraClass('multiselect-button btn');
 
         if (!empty($this->buttonConfig['icon'])) {
             $button->setAttribute('data-icon', $this->buttonConfig['icon']);
@@ -137,12 +148,12 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
 
     /**
      * @param GridField $gridField
-     * @param array|SS_HTTPRequest $data
+     * @param array|HTTPRequest $data
      * @return array
      */
     public function handleIt($gridField, $data = array())
     {
-        if ($data instanceof SS_HTTPRequest) {
+        if ($data instanceof HTTPRequest) {
             $data = $data->requestVars();
         }
 
@@ -190,7 +201,7 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
      * all the items. Response will usually be an array on the way in
      * but it can be changed to whatever and will be returned as is.
      * @param GridField $gridField
-     * @param array|SS_HTTPResponse $response
+     * @param array|HTTPResponse $response
      * @param SS_List $records
      * @param array $data
      * @param array $idList
@@ -202,7 +213,7 @@ class GridFieldApplyToMultipleRows implements GridField_HTMLProvider, GridField_
 
     /**
      * @param GridField $gridField
-     * @param array|SS_HTTPResponse $response
+     * @param array|HTTPResponse $response
      * @param array $data
      * @param array $idList
      */

@@ -1,4 +1,10 @@
 <?php
+namespace MarkGuinn\GridfieldMultiselect\Forms\GridField;
+
+use SilverStripe\Forms\GridField\GridField_ColumnProvider;
+use SilverStripe\View\Requirements;
+use SilverStripe\Core\Config\Config;
+
 /**
  * Gives each row a checkbox which can be paired with various
  * children of GridFieldApplyToMultipleRows subclasses to
@@ -26,7 +32,7 @@ class GridFieldCheckboxSelectComponent implements GridField_ColumnProvider
      */
     public function __construct()
     {
-        Requirements::javascript('gridfieldmultiselect/javascript/GridFieldCheckboxSelectComponent.js');
+        Requirements::javascript('markguinn/silverstripe-gridfieldmultiselect: client/js/GridFieldCheckboxSelectComponent.js');
     }
 
 
@@ -111,6 +117,6 @@ class GridFieldCheckboxSelectComponent implements GridField_ColumnProvider
      */
     public function getColumnAttributes($gridField, $record, $columnName)
     {
-        return array('class' => 'col-checkbox');
+        return array('class' => 'col-checkbox grid-field__col-compact');
     }
 }
