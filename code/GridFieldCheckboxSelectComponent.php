@@ -101,8 +101,10 @@ class GridFieldCheckboxSelectComponent implements GridField_ColumnProvider
     public function getColumnMetadata($gridField, $column)
     {
         if ($column === self::CHECKBOX_COLUMN) {
+            $title = _t('GridFieldMultiSelect.SelectAllVisibleRows', 'Select all visible rows');
             return [
-                'title' => 'Select'
+                'title' => '<input class="multiselect-all no-change-track" type="checkbox"
+                title="' . htmlentities($title) . '">'
             ];
         }
     }
