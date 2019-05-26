@@ -6,7 +6,7 @@ it easy to perform actions on multiple rows.
 
 Requirements
 ------------
-- Silverstripe 3.1+
+- Silverstripe ^4
 
 
 Example: Delete
